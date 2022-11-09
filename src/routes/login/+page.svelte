@@ -1,5 +1,30 @@
-<form >
-  <input type="text" name="username" placeholder="Username or Email" />
-  <input type="password" name="password" placeholder="Password" />
-  <button type="submit">Login</button>
-</form>
+<script lang="ts">
+	import { authenticate } from '@/lib/services/auth';
+	import { redirect } from '@sveltejs/kit';
+
+	let email: string = '';
+	let password: string = '';
+
+	$: error = '';
+
+	const handleLogin = async () => {
+		const successLoggedIn: boolean = await authenticate(email, password);
+
+		if (!successLoggedIn) {
+			error = 'Invalid credentials';
+			return;
+		}
+		
+		return redirect(302, '/');
+	};
+</script>
+
+<div class="form">
+	<input type="text" name="username" placeholder="Email" bind:value="{email}" />
+	<input type="password" name="password" placeholder="Password" bind:value="{password}" />
+	<button type="submit" on:click="{handleLogin}">Login</button>
+</div>
+
+{#if error}
+  <p>{error}</p>
+{/if}

@@ -1,10 +1,6 @@
 <script lang="ts">
-	import { error } from '@sveltejs/kit';
   import Link from '@/lib/components/Link.svelte';
 
-	export const load = () => {
-		throw error(404, 'Not Found');
-	};
 </script>
 
 

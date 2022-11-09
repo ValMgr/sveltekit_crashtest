@@ -1,6 +1,9 @@
 <script lang='ts'>
 
   import Link from '@/lib/components/Link.svelte';
+  import { session } from '@/lib/services/auth';
+
+  $: isLogged = $session;
   
 </script>
 
@@ -12,7 +15,11 @@
     <Link href="/calendar">Calendar</Link>
     <Link href="/about">About</Link>
     | 
-    <Link href="/login">Login</Link>
+    { #if isLogged }
+      <Link href="/logout">Logout</Link>
+    {:else}
+      <Link href="/login">Login</Link>
+    {/if}
   </nav>
 </header>
 
