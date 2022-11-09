@@ -8,7 +8,7 @@
 </script>
 
 <header>
-  <h1>Who the fuck are you ?</h1>
+  <h1>LVA</h1>
   <nav>
     <Link href="/">Home</Link>
     <Link href="/directory">Directory</Link>

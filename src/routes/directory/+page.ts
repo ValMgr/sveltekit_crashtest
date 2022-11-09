@@ -4,7 +4,7 @@ import { isAuth } from '@/lib/services/auth';
 import { redirect } from '@sveltejs/kit';
 import { session } from '@/lib/services/auth';
 
-export const load: PageLoad = async (page) => {
+export const load: PageLoad = async () => {
 	if (!isAuth()) {
 		throw redirect(302, '/login');
 	}
@@ -14,7 +14,7 @@ export const load: PageLoad = async (page) => {
 	const users: Person[] = await fetch('/src/data/Users.json')
 		.then((res) => res.json())
 		.catch((err) => {
-			console.log(err);
+			console.error(err);
 			return [];
 		});
 

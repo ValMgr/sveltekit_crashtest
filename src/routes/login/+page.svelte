@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { authenticate } from '@/lib/services/auth';
-	import { redirect } from '@sveltejs/kit';
+	import { goto } from '$app/navigation';
 
 	let email: string = '';
 	let password: string = '';
@@ -8,14 +8,15 @@
 	$: error = '';
 
 	const handleLogin = async () => {
-		const successLoggedIn: boolean = await authenticate(email, password);
+		const successLoggedIn: boolean = await authenticate(email, password)
 
 		if (!successLoggedIn) {
 			error = 'Invalid credentials';
 			return;
 		}
 		
-		return redirect(302, '/');
+
+		goto('/', { replaceState: true });
 	};
 </script>
 

@@ -1,14 +1,18 @@
 <script lang="ts">
-  import { session } from '@/lib/services/auth';
+	import { session } from '@/lib/services/auth';
 
-  const isLogged: boolean = !!$session;
+	const isLogged: boolean = !!$session;
 </script>
 
-<h1>Welcome to Who the fuck you are ?</h1>
+<h1>Welcome to LVA</h1>
 <p>Powered with SvelteKit</p>
-  
-  {#if isLogged}
-    <p>You are logged in</p>
-  {:else}
-    <p>You are not logged in</p>
-  {/if}
+
+<hr />
+<p>
+	Auth status:
+	{#if isLogged}
+		You are logged in
+	{:else}
+		You are not logged in
+	{/if}
+</p>
