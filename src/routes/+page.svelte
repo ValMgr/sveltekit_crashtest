@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { session } from '@/lib/services/auth';
 
-	const isLogged: boolean = !!$session;
+	$: isLogged = !!$session;
 </script>
 
 <h2>Welcome to LVA</h2>
 <p>
-	This is a crashtest app to experiment SvelteKit. <br />
+	This is a POC to experiment SvelteKit. <br />
 	Goal is to create a simple app to manage student lists.
 </p>
 <p>Powered with SvelteKit</p>
@@ -17,8 +17,7 @@
 <ul>
 	<li>- Basic auth system</li>
 	<li>- List student from JSON file</li>
-	<li>- Searchbar to find student</li>
-	<li>- Sorts student by several criteria</li>
+	<li>- Searchbar to find student by any field</li>
 </ul>
 
 <p></p>
