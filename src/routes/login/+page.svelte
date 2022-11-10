@@ -8,13 +8,12 @@
 	$: error = '';
 
 	const handleLogin = async () => {
-		const successLoggedIn: boolean = await authenticate(email, password)
+		const successLoggedIn: boolean = await authenticate(email, password);
 
 		if (!successLoggedIn) {
 			error = 'Invalid credentials';
 			return;
 		}
-		
 
 		goto('/', { replaceState: true });
 	};
@@ -27,5 +26,5 @@
 </div>
 
 {#if error}
-  <p>{error}</p>
+	<p>{error}</p>
 {/if}

@@ -8,6 +8,8 @@
 </script>
 
 
+<a href="/directory">Back to list</a>
+
 <div>
   <h1>{user.firstname} {user.lastname}</h1>
   <p>{user.email}</p>

@@ -16,6 +16,10 @@ export const authenticate = async (email: string, password: string): Promise<boo
 	return false;
 };
 
+export const logout = (): void => {
+	session.set(null);
+};
+
 export const isAuth = (): boolean => {
 	let user_session: null | User = null;
 	session.subscribe((user) => {
