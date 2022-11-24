@@ -11,7 +11,7 @@
 
 <style lang='scss'>
   a {
-    color: rgb(0, 92, 163);
+    color: rgb(0, 0, 0);
     text-decoration: none;
   }
 
@@ -20,7 +20,7 @@
     display: block;
     width: 0;
     height: 2px;
-    background-color: rgb(0, 92, 163);
+    background-color: rgb(0, 0, 0);
     transition: width 0.3s;
   }
 

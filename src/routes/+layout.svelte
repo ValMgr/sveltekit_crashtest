@@ -12,7 +12,6 @@
   <nav>
     <Link href="/">Home</Link>
     <Link href="/directory">Directory</Link>
-    <Link href="/calendar">Calendar</Link>
     <Link href="/about">About</Link>
     | 
     { #if isLogged }
@@ -56,6 +55,9 @@
   .container {
     width: 80%;
     margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 
 </style>

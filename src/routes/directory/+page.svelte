@@ -41,7 +41,7 @@
 				<td>{user.formation}</td>
 				<td>{user.year}</td>
 				<td>{user.internship}</td>
-				<td><a href="/directory/users/{user.id}">+</a></td>
+				<td><a class="see_more" href="/directory/users/{user.id}">+</a></td>
 			</tr>
 		{/each}
 	</tbody>
@@ -50,5 +50,37 @@
 <style lang="scss">
 	.user_list {
 		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0 10px;
+		margin: 2rem 0;
+
+		tr {
+			td:not(:last-child) {
+				padding: 0.5rem;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				text-align: center;
+			}
+
+			td:last-child {
+				padding: 0.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			&:nth-child(even) td:not(:last-child) {
+				background-color: #f2f2f2;
+			}
+		}
+	}
+
+	.see_more {
+		padding: 0.5rem 1rem;
+		color: rgb(255, 255, 255);
+		border-radius: 4px;
+		background-color: rgb(0, 0, 0);
+		border: 1px solid rgb(0, 0, 0);
+		text-decoration: none;
 	}
 </style>

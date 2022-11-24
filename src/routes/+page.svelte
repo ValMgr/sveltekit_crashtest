@@ -13,11 +13,13 @@
 
 <hr />
 
-<h5>Basic features:</h5>
+<h5>Included features:</h5>
 <ul>
 	<li>- Basic auth system</li>
-	<li>- List student from JSON file</li>
-	<li>- Searchbar to find student by any field</li>
+	<li>- Page secured with auth</li>
+	<li>- List student from JSON</li>
+	<li>- Searchbar to find students by any field</li>
+	<li>- Pre-rendered "About" page </li>
 </ul>
 
 <p></p>
